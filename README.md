@@ -1,4 +1,4 @@
-# clickyGame
+# Clicky Game
 
 * a memory game created with React. This application renders different images to the screen. Each image listens for click events.
 The application keeps track of the user's score. 
