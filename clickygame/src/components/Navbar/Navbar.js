@@ -1,11 +1,11 @@
 import React from "react";
 
-const Navbar = () => (
+const Navbar = (props) => (
   <nav className="navbar fixed-top navbar-dark bg-primary">
-    <a className="navbar-brand" href="#">Clicky Game</a>
-    <span>Click an image to begin!</span>
-    <span>"Score: 0</span>
-    <span>Top Score: 0</span>
+    <a className="navbar-brand" href="/">Clicky Game</a>
+    <span>{props.action}</span>
+    <span>Score: {props.score}</span>
+    <span>Top Score: {props.topScore}</span>
   </nav>
 );
 

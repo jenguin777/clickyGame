@@ -39,3 +39,8 @@
 .card > .remove:hover {
   color: #d50000;
 }
+
+.card-base:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px #999, 0 10px 15px #999;
+}
