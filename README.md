@@ -15,7 +15,7 @@
 * State management / responds to user events
 
 # To run the application
-Just run "npm install" in a terminal window after cloning the project. The required packages will be fetched from the package.json file and installed on your machine. Or you can see a deployed version here.
+Just run "npm install" in a terminal window after cloning the project. The required packages will be fetched from the package.json file and installed on your machine. Or you can see a deployed version [here.](https://safe-lake-53378.herokuapp.com/)
 
 # License
 MIT license applies.
