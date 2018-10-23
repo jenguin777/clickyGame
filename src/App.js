@@ -11,8 +11,10 @@ class App extends Component {
   state = {
     friends: friends,
     score: 0,
+    losses: 0,
     topScore: 0,
-    action: "Click an image to begin!"
+    action: "Click an image to begin!",
+    picked: []
   };
 
   // The user's score should be incremented when clicking an image for the first time. The user's score should be reset to 0 if they click the same image more than once.
@@ -21,18 +23,16 @@ class App extends Component {
 
   changeClickState = (id) => {
     console.log('click triggered: ', id);
-  //   // For each of the friends, 
-  //   const friends = this.state.friends.map(userClicked => {
-  //     if (userClicked.id === id) {
-  //       if (userClicked.clicked === true) {
-  //           this.setState({guess: "You guessed incorrectly!"});
-  //           this.resetGame();
-  //           this.shuffleCards();
-  //           return userClicked;
-  // }
-  //       }
-  //     }
-  //   })  
+    if(this.state.picked.includes(id)){
+      alert("You guessed incorrectly!");
+      this.setState({ losses: this.state.losses + 1});
+      this.resetGame();
+    } else {
+      this.setState({picked: [...this.state.picked, id], score: this.state.score + 1});
+      this.shuffleCards();
+    }
+    console.log("this.state.picked: ", this.state.picked);
+
   }
 
   // Fisher-Yates Shuffle https://bost.ocks.org/mike/shuffle/
@@ -60,6 +60,7 @@ class App extends Component {
 
   resetGame = () => {
     const resetFriends = this.state.friends.map(resetFriend => {
+      this.shuffleCards();
       resetFriend.clicked = false;
       return resetFriend;
     });
