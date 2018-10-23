@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import FriendCard from "./components/FriendCard";
 import Wrapper from "./components/Wrapper";
 import Navbar from "./components/Navbar";
-// import Header from "./components/Header";
+import Header from "./components/Header/Header";
 import friends from "./friends.json";
 import "./App.css";
 
@@ -12,7 +12,7 @@ class App extends Component {
     friends: friends,
     score: 0,
     topScore: 0,
-    action: "Click and image to begin!"
+    action: "Click an image to begin!"
   };
 
   // The user's score should be incremented when clicking an image for the first time. The user's score should be reset to 0 if they click the same image more than once.
@@ -37,13 +37,14 @@ class App extends Component {
 
   // Fisher-Yates Shuffle https://bost.ocks.org/mike/shuffle/
   shuffleCards = () => {
+    // Make a copy of friends array, this copy is what will be shuffled
     const shuffleFriends = this.state.friends.slice();
     let friendsIndex = this.state.friends.length;
     let randomIndex = 0;
     let tempFriend = {};
     // While there remain elements to shuffle…
     while (friendsIndex) {
-      // Pick a remaining element…
+      // Pick a remaining random element…
       randomIndex = Math.floor(Math.random() * friendsIndex--);
       // And swap it with the current element.
       tempFriend = shuffleFriends[friendsIndex];
@@ -51,6 +52,7 @@ class App extends Component {
       shuffleFriends[randomIndex] = tempFriend;
     }
     this.setState({
+      // Now, we set the shuffled copy of friends to friends
       friends: shuffleFriends,
     });
     return friends;
@@ -76,7 +78,7 @@ class App extends Component {
         highScore={this.state.topScore}
         action={this.state.action}
         />
-        {/* <Header /> */}
+        <Header></Header>
         {/* This is the react version of a for loop, grab each friend from the friends array add the specified attributes, then return the friend in a FriendCard */}
           {this.state.friends.map(friend => (
             <FriendCard
