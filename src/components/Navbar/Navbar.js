@@ -5,7 +5,6 @@ const Navbar = (props) => (
     <a className="navbar-brand" href="/">Clicky Game</a>
     <span>{props.action}</span>
     <span>Score: {props.score}</span>
-    <span>Top Score: {props.topScore}</span>
   </nav>
 );
 

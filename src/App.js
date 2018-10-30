@@ -12,7 +12,6 @@ class App extends Component {
     friends: friends,
     score: 0,
     losses: 0,
-    topScore: 0,
     action: "Click an image to begin!",
     picked: []
   };
@@ -76,7 +75,6 @@ class App extends Component {
         <Wrapper>
         <Navbar 
         score={this.state.score}
-        highScore={this.state.topScore}
         action={this.state.action}
         />
         <Header></Header>
