@@ -23,10 +23,12 @@ class App extends Component {
   changeClickState = (id) => {
     console.log('click triggered: ', id);
     if(this.state.picked.includes(id)){
-      alert("You guessed incorrectly!");
-      this.setState({ losses: this.state.losses + 1});
+      this.setState({action: "You guessed incorrectly!"});
       this.resetGame();
+      this.shuffleCards();
+      this.setState({ losses: this.state.losses + 1});
     } else {
+      this.setState({action: "CORRECT!"});
       this.setState({picked: [...this.state.picked, id], score: this.state.score + 1});
       this.shuffleCards();
     }
