@@ -19,7 +19,9 @@
   background:rgb(220, 108, 173);
 }
 .card > .img-container > img {
-  width: 60%
+  /* width: 70% */
+  width: 190px;
+  height: 190px;
 }
 
 .card > .content {
@@ -43,4 +45,13 @@
 .card-base:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 15px #999, 0 10px 15px #999;
+}
+
+img {
+  width: 180px;
+  height: 180px;
+}
+
+.click {
+  display: inline-block;
 }
