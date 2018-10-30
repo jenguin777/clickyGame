@@ -23,7 +23,7 @@ MIT license applies.
 # Code of Conduct
 Be nice and don't talk to strangers.
 
-##################################################################################################
+******************************************************************************************************************************
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
